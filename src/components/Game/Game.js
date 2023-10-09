@@ -22,7 +22,7 @@ function Game() {
   return (
     <>
       {range(NUM_OF_GUESSES_ALLOWED).map((num, index) => (
-        <Guess item={items[num]} key={index} />
+        <Guess item={items[num]} key={index} answer={answer} />
       ))}
       <GuessInput handleInput={handleInput} />
     </>
