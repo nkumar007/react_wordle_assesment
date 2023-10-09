@@ -1,12 +1,14 @@
 import React from "react";
 
-function GuessInput({searchTerm, setSearchTerm, setItems, items}) {
+function GuessInput({handleInput}) {
+  const [searchTerm, setSearchTerm] = React.useState("");
+
   return (
     <form
       className="guess-input-wrapper"
       onSubmit={(event) => {
         event.preventDefault();
-        setItems([...items, searchTerm]);
+        handleInput(searchTerm);
         console.log({searchTerm});
         setSearchTerm("");
       }}
